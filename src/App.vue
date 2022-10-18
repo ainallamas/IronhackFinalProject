@@ -18,13 +18,19 @@
 
 <script setup>
 
+import { onMounted } from 'vue';
+import {login, newTask} from './api';
 
-import { createClient } from '@supabase/supabase-js'
+// Aquí estamos importando el login -> le pasamos el email y la contraseña y nos devuelve un id. 
+onMounted (async () => {
+  const id = await login('ainallamas@gmail.com', '1234567');
+  newTask({
+    user_id: id, 
+    title: 'Título',
+    description: 'Descripción del task'
+  })
+});
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
-
-console.log(supabase);
-console.log(process.env.NODE_ENV);
 
 </script>
 
