@@ -56,6 +56,7 @@ try {
 catch (error) {
     console.log(error)
     }    
+    alert(`Hello ${email.value}, please confirm your email.`)
 });
 
 </script>

@@ -48,6 +48,9 @@ const authStore = useAuthStore();
 const email = ref('');
 const password = ref ('');
 
+// Missatge alerta dels errors: 
+const alerta = ref('');
+
 
 const onSubmit = (async () => {
 try {
@@ -58,7 +61,8 @@ try {
     }
 catch (error) {
     console.log(error)
-    }    
+    alert('Invalid login credentials. Please, sign up.')
+}; 
 });
 
 </script>
