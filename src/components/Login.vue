@@ -60,8 +60,11 @@ try {
     });
     }
 catch (error) {
-    console.log(error)
-    alert('Invalid login credentials. Please, sign up.')
+    console.log(error);
+    alert('Invalid login credentials. Please, sign up.');
+    router.push({
+    name: 'register'
+    });
 }; 
 });
 

@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia'
 import { createClient } from '@supabase/supabase-js'
+import { useAuthStore } from './auth';
  
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
+const authStore = useAuthStore();
 
 export const useTaskStore = defineStore('task', {
   state: () => ({
@@ -19,13 +21,13 @@ export const useTaskStore = defineStore('task', {
       return this.task; 
     },
     async newTask(title, description){
-      console.log(useAuthStore().user.id);
+      // console.log(useAuthStore().user.id);
       const res2 = await supabase
       .from('task')
       .insert([{
-        user_id: useAuthStore().user.id,
+        user_id: authStore.user.id,
         title, 
-        is_complete: false,
+        isCreated: false,
         description, 
       },
     ]);

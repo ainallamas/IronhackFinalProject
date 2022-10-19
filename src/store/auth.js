@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { createClient } from '@supabase/supabase-js'
- 
+
+
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 
@@ -9,10 +10,10 @@ export const useAuthStore = defineStore('auth', {
     user: undefined, 
     }),
   actions: {
-    async fetchUser () {
-      const user = await supabase.auth.user();
-      this.user = user
-    },
+    // async fetchUser () {
+    //   const user = await supabase.auth.user();
+    //   this.user = user
+    // },
     async register (email, password) {
       const res1 = await supabase.auth.signUp({
         email,
@@ -39,8 +40,10 @@ export const useAuthStore = defineStore('auth', {
     },
     async logout () {
       const res3 = await supabase.auth.signOut();
-      if (error) throw error;
-      console.log (error);
+      console.log (res3.error);
+      if (res3.error) throw error;
+      console.log (res3.error);
+      this.user = undefined;
     },
     persist: {
       enabled: true, 

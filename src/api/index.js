@@ -34,7 +34,8 @@ export const login = async (email, password) => {
 
 // El newTask nos da un objeto -> nos tendría que dar el id del objeto que se ha insertado --> tiene relación con el comentario de addTask del doc -> tasks.js (en api).
 export const newTask = async (task) => {
-    const response = await supabase.from('task')
+    const response = await supabase
+      .from('task')
       .insert(task)
 // TODO -> identificar la respuesta y retornar lo que necesitamos. Por ejemplo, podemos retornar un true si se ha insertado y un false si no. 
 // El response no retorna el id de la task que se ha creado y tendremos que volver a hacer un getTask para obtener los id. 

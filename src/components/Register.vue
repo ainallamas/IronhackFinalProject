@@ -49,14 +49,14 @@ const password = ref ('');
 const onSubmit = (async () => {
 try {
     await authStore.register(email.value, password.value);
-    router.push({
-    name: 'login'
-    });
     }
 catch (error) {
     console.log(error)
     }    
     alert(`Hello ${email.value}, please confirm your email.`)
+    router.push({
+    name: 'login'
+    });
 });
 
 </script>
