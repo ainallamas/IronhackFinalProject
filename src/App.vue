@@ -8,7 +8,7 @@
   </li>
   <br>
   <li>
-    <router-link :to="{name: 'login'}">Login</router-link>
+    <router-link :to="{name: 'auth'}">Authentication</router-link>
   </li>
 </ul>
 
@@ -34,7 +34,7 @@ onMounted (async () => {
     if (!authStore.user) {
       appReady.value = true; 
       router.push({
-        path: '/auth'
+        name: 'login'
       });
     } else {
    
