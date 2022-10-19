@@ -1,24 +1,55 @@
 import { defineStore } from 'pinia'
+import { createClient } from '@supabase/supabase-js'
+ 
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+
 
 export const useAuthStore = defineStore('auth', {
-  // arrow function recommended for full type inference
-  state: () => {
-    return {
-      // all these properties will have their type inferred automatically
-    //   Lo ponemos en false porque al prinipio no va a estar autenticado. 
-      isAuth: false, 
-    //   Guardaremos el id de supabase que nos dará al hacer el login. Cuando registramos un usuario, tendremos que esperar que validen el email, por lo que tendremos que informar al usuario de que recibirá un email en breve para validarlo. 
-      id: undefined,
-    }
-  },
+  state: () => ({
+    user: undefined, 
+    }),
   actions: {
-    login(){
-        // TODO -> cambiar el estado de isAuth a true y el id de usuario
-        // isAuth: true, 
-    }, 
-    logout(){
-        // isAuth: false, 
-        // id: undefined,
-    }
-  }
-})
+    async fetchUser () {
+      const user = await supabase.auth.user();
+      this.user = user
+    },
+    async register (email, password) {
+      const res1 = await supabase.auth.signUp({
+        email,
+        password
+      });
+      if (error) throw error; 
+      if (user) {
+      this.user = user;
+      console.log(this.user); 
+      }
+    },
+    async login (email, password) {
+      console.log(email, password)
+      const res2 = await supabase.auth.signInWithPassword({
+        email,
+        password
+      });
+      console.log(res2);
+      if (res2.error) throw error;
+      if (res2.data.user) {
+        this.user = res2.data.user;
+        console.log(this.user); 
+        }
+    },
+    async logout () {
+      const res3 = await supabase.auth.signOut();
+      if (error) throw error;
+      console.log (error);
+    },
+    persist: {
+      enabled: true, 
+      strategies: [
+        {
+          key: 'user',
+          storage: localStorage
+        },
+      ],
+    },
+  },
+  });

@@ -19,16 +19,30 @@
 <script setup>
 
 import { onMounted } from 'vue';
-import {login, newTask} from './api';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from './store/auth';
+import { ref } from 'vue';
 
-// Aquí estamos importando el login -> le pasamos el email y la contraseña y nos devuelve un id. 
+const router = useRouter();
+const authStore = useAuthStore();
+const { user } = storeToRefs(authStore);
+
 onMounted (async () => {
-  const id = await login('ainallamas@gmail.com', '1234567');
-  newTask({
-    user_id: id, 
-    title: 'Título',
-    description: 'Descripción del task'
-  })
+  const appReady = ref(null);
+  try {
+    if (!authStore.user) {
+      appReady.value = true; 
+      router.push({
+        path: '/auth'
+      });
+    } else {
+   
+    }
+  }
+  catch (error) {
+    console.log(error)
+  }
 });
 
 
