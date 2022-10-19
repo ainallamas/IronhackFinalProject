@@ -1,5 +1,7 @@
 <template>
 
+    <h1>LOGIN</h1>
+
     <div class="section">
     <div class="container">
         <form @submit.prevent="onSubmit">
@@ -22,6 +24,9 @@
                 </div>
             </div>
         </form>
+
+        <router-link :to="{name: 'register'}">Register</router-link>
+
     </div>
     </div>
     
