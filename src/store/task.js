@@ -12,7 +12,7 @@ export const useTaskStore = defineStore('task', {
   }),
   actions: {
     async getTasks() {
-      const res1 = await supabase
+      const { data: task, error } = await supabase
       .from('task')
       .select('*')
       .order('id', {ascending: false});
@@ -42,10 +42,13 @@ export const useTaskStore = defineStore('task', {
       .eq('id', id) 
     },
     async deleteTask (id) {
-      const res4 = await supabase
+      const { data, error } = await supabase
       .from('task')
       .delete()
       .eq('id', id) 
     },
-  }
+  },
+  persist: {
+    enabled: true, 
+  },
 }); 

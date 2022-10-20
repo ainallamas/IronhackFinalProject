@@ -1,9 +1,10 @@
 <template>
 
-    <h1>LOGIN</h1>
+    
 
     <div class="section">
     <div class="container">
+        <h1 class="title">LOGIN</h1>
         <form @submit.prevent="onSubmit">
             <div class="field">
                 <label class="label">Email</label>

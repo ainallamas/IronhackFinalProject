@@ -45,14 +45,9 @@ export const useAuthStore = defineStore('auth', {
       console.log (res3.error);
       this.user = undefined;
     },
-    persist: {
-      enabled: true, 
-      strategies: [
-        {
-          key: 'user',
-          storage: localStorage
-        },
-      ],
-    },
+
+  },
+  persist: {
+    enabled: true, 
   },
   });

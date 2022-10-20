@@ -1,6 +1,6 @@
 <template>
 
-<h1>TASK APP</h1>
+<!-- <Navbar /> -->
 
 <ul>
   <li>
@@ -23,6 +23,7 @@ import { storeToRefs } from 'pinia';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from './store/auth';
 import { ref } from 'vue';
+// import Navbar from './components/Navbar.vue';
 
 const router = useRouter();
 const authStore = useAuthStore();
