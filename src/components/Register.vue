@@ -19,6 +19,13 @@
                 </div>
             </div>
             <div class="field">
+                <label class="label">Password confirmation</label>
+                <div class="control">
+                    <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
+                <input v-model="passwordConfirmation" class="input" type="password" placeholder="Password confirmation">
+                </div>
+            </div>
+            <div class="field">
                 <div class="control">
                 <input class="button is-link is-fullwidth" type="submit" placeholder="Text input">
                 </div>
@@ -44,9 +51,11 @@ const authStore = useAuthStore();
 // Inputs from the users:
 const email = ref('');
 const password = ref ('');
+const passwordConfirmation = ref ('');
 
 
 const onSubmit = (async () => {
+if (password.value === passwordConfirmation.value) {
 try {
     await authStore.register(email.value, password.value);
     }
@@ -57,6 +66,9 @@ catch (error) {
     router.push({
     name: 'login'
     });
+} else {
+    alert(`Passwords do not match!`)
+};
 });
 
 </script>

@@ -21,7 +21,6 @@ export const useTaskStore = defineStore('task', {
       return this.task; 
     },
     async newTask(title, description){
-      // console.log(useAuthStore().user.id);
       const res2 = await supabase
       .from('task')
       .insert([{
@@ -46,6 +45,17 @@ export const useTaskStore = defineStore('task', {
       .from('task')
       .delete()
       .eq('id', id) 
+    },
+    async doneTask (id, isCreated) {
+      console.log(isCreated)
+    try {
+      const { data, error } = await supabase
+      .from('task')
+      .update({ isCreated: !isCreated })
+      .match({ id: id })
+    } catch (error) {
+      console.log("This is my error", error)
+    }
     },
   },
   persist: {

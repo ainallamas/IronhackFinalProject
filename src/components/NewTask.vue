@@ -47,6 +47,7 @@ const onSubmit = (async () => {
     console.log(title.value, description.value)
     title.value = '';
     description.value = '';
+    taskStore.getTasks();
 });
 
 
