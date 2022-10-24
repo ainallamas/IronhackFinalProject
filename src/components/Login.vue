@@ -1,11 +1,14 @@
 <template>
 
-    
-
 <div class="section">
 <div class="container">
-    <h1 class="title">Already have an account?</h1>
-    <h2 class="subtitle">Please, log in</h2>
+
+<div class="welcome-message">
+    <h1 class="title welcome">Already have an account?</h1>
+    <h2 class="subtitle welcome">Please, log in</h2>
+</div>
+
+<div class="sign-in">
     <form @submit.prevent="onSubmit">
         <div class="field">
             <label class="label">Email</label>
@@ -22,17 +25,21 @@
             </div>
             <div class="field">
                 <div class="control">
-                <button class="button is-link is-fullwidth" type="submit" placeholder="Text input">Submit</button>
+                <button class="button is-link is-centered submit-button" type="submit">Submit</button>
                 </div>
             </div>
-        </form>
+    </form>
 
-        <div class="button register-button">
-        <router-link :to="{name: 'register'}">Register</router-link>
-        </div>
-
+    <div class="registro">
+    <div class="field button is-link is-centered register-button">
+        <router-link :to="{name: 'register'}">Not a member yet? Please, register</router-link>
     </div>
     </div>
+
+</div>
+
+</div>
+</div>
     
 </template>
 
@@ -75,5 +82,62 @@ catch (error) {
 </script>
     
 <style scoped>
+
+label {
+color: #D2D904;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    color: #278C8C;
+}
+
+.welcome-message {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-in {
+    margin: 20px;
+    border: solid 5px #D2D904;
+    border-radius: 0.8rem;
+    background-color:  #F24194;
+}
+
+.field {
+    margin: 20px;
+}
+
+.register-button {
+    display: flex;
+    background-color: #D2D904;
+}
+
+.register-button:hover {
+    background-color: #278C8C;
+}
+
+.submit-button {
+    background-color: #278C8C;
+    color: #F24194;
+}
+
+.submit-button:hover {
+    background-color: #D2D904;
+    color: #F24194;
+}
+
+a {
+    color: #D92567;
+}
+
+
 
 </style>

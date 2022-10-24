@@ -1,22 +1,29 @@
 <template>
 <div class="section">
-<div class="container mt-5">
+<div class="container">
 
-<h1 class="title">NEW TASK</h1>
+<div class="welcome-message">
+    <h1 class="title">NEW TASK</h1>
+</div>
 
 <form @submit.prevent="onSubmit">
 
-    <div class="control">
-        <input v-model="title" class="input is-normal" placeholder="Post title">
+    <div class="field">
+        <div class="control">
+        <input v-model="title" class="input" placeholder="Task title">
+        </div>
     </div> 
 
-    <br>
-    <div class="control">
-        <textarea v-model="description" class="textarea" placeholder="Write a post"></textarea>
+    <div class="field">
+        <div class="control">
+        <textarea v-model="description" class="textarea" placeholder="Write a task description"></textarea>
+        </div>
     </div>
 
-    <div class="control">
-        <button type="submit" class="mt-2 button is-info">Submit</button>
+    <div class="field">
+        <div class="control">
+        <button class="button is-link is-centered submit-button" type="submit">Submit</button>
+        </div>
     </div>
 
 </form>
@@ -56,4 +63,33 @@ const onSubmit = (async () => {
 </script>
 
 <style scoped>
+
+.container {
+    border: solid 5px #D2D904;
+    border-radius: 0.8rem;
+    background-color:  #F24194;
+}
+
+.welcome-message {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.field {
+    margin: 20px;
+    text-align: center;
+}
+
+.submit-button {
+    background-color: #278C8C;
+    color: #F24194;
+}
+
+.submit-button:hover {
+    background-color: #D2D904;
+    color: #F24194;
+}
+
 </style>

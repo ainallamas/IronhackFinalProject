@@ -15,34 +15,39 @@
     <div class="subtitle">{{props.task.description}}</div>
     </div>
 
-<div class="task-buttons">
-
-    <!-- <EditTaskModal v-if=edit @click="!editModal"/> -->
-
-    <button @click="editTask" class="button is-info is-light edit-button">Edit</button>
-
+    <div class="task-buttons">
+    <button @click="editTask" class="button submit-button">Edit</button>
     
-    <button @click="completedTask" class="button is-success is-light done-button">Done</button>
+    <button @click="completedTask" class="button submit-button">Done</button>
     
-    <button @click="delTask" class="button is-danger is-light delete-button">Delete</button>
-</div>
+    <button @click="delTask" class="button submit-button">Delete</button>
+    </div>
+
 </div>
 
 <div v-else class="task-card" :class="{ done : props.task.isCreated }">
 
-
-    <div class="control">
+    <div class="field">
+        <div class="control">
         <input v-model="taskUpdated.title" class="input is-normal" placeholder="Post the new title">
-    </div> 
-
-    <br>
-    <div class="control">
-        <textarea v-model="taskUpdated.description" class="textarea" placeholder="Write a new post description"></textarea>
+        </div> 
     </div>
 
-    <div class="control">
-        <button @click="acceptChanges" class="mt-2 button is-info">Accept</button>
-        <button @click="cancelChanges" class="mt-2 button is-info">Cancel</button>
+    <div class="field">
+        <div class="control">
+        <textarea v-model="taskUpdated.description" class="textarea" placeholder="Write a new post description"></textarea>
+        </div>
+    </div>  
+
+    <div class="field">
+        <div class="control">
+        <button @click="acceptChanges" class="button submit-button">
+            <strong>Accept</strong>
+        </button>
+        <button @click="cancelChanges" class="button submit-button">
+           <strong>Cancel</strong>
+        </button>
+        </div>
     </div>
 
 </div>
@@ -122,10 +127,11 @@ const acceptChanges = (async () => {
 <style scoped>
 
 .task-card {
-    border: solid 1px #333;
+    border: solid 5px #D92567;
+    border-radius: 0.8rem;
     padding: 1rem;
     margin-top: 10px;
-    background-color: #D6BD2A;
+    background-color: #D2D904;
 }
 
 .task-buttons {
@@ -134,14 +140,25 @@ const acceptChanges = (async () => {
     margin: 20px;
 }
 
-/* header {
-display: flex; 
-justify-content: space-between;
-} */
-
 .done {
-    background-color: #ADC;
+    background-color:#D92567;
+    border: solid 5px  #D2D904;
 }
 
+.submit-button {
+    background-color: #278C8C;
+    border: #278C8C;
+    color: #F24194;
+}
+
+.submit-button:hover {
+    background-color: #F24194;
+    color: #D6BD2A;
+}
+
+.control {
+    display: flex;
+    justify-content: space-around;
+}
 
 </style>

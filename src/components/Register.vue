@@ -4,8 +4,11 @@
 <div class="section">
 <div class="container">
 
-    <h1 class="title">Please, sign up</h1>
+<div class="welcome-message">
+    <h1 class="title welcome">Please, sign up</h1>
+</div>
 
+<div class="sign-up">
     <form @submit.prevent="onSubmit">
         <div class="field">
             <label class="label">Email</label>
@@ -29,17 +32,21 @@
         </div>
         <div class="field">
             <div class="control">
-            <button class="button is-link is-fullwidth" type="submit" placeholder="Text input">Submit</button>
+            <button class="button is-link is-centered submit-button" type="submit" placeholder="Text input">Submit</button>
             </div>
             </div>
         </form>
 
-    <div class="button register-button">
-    <router-link :to="{name: 'login'}">Already have an account? Login here</router-link>
+    <div class="login">
+    <div class="field button is-link is-centered login-button">
+    <router-link :to="{name: 'login'}">Already have an account? Sign in here</router-link>
+    </div>
     </div>
 
-    </div>
-    </div>
+</div>
+
+</div>
+</div>
     
 </template>
 
@@ -81,5 +88,61 @@ catch (error) {
 </script>
     
 <style scoped>
+
+label {
+color: #D2D904;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome {
+    color: #278C8C;
+}
+
+.welcome-message {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-up {
+    margin: 20px;
+    border: solid 5px #D2D904;
+    border-radius: 0.8rem;
+    background-color:  #F24194;
+}
+
+.field {
+    margin: 20px;
+}
+
+.login-button {
+    display: flex;
+    background-color: #D2D904;
+}
+
+.login-button:hover {
+    background-color: #278C8C;
+}
+
+.submit-button {
+    background-color: #278C8C;
+    color: #F24194;
+}
+
+.submit-button:hover {
+    background-color: #D2D904;
+    color: #F24194;
+}
+
+a {
+    color: #D92567;
+}
+
 
 </style>
