@@ -2,6 +2,8 @@
 <div class="section">
 <div class="container mt-5">
 
+<h1 class="title">NEW TASK</h1>
+
 <form @submit.prevent="onSubmit">
 
     <div class="control">

@@ -2,7 +2,7 @@
 
 <!-- <Navbar /> -->
 
-<ul>
+<!-- <ul>
   <li>
     <router-link :to="{name: 'home'}">Home</router-link>
   </li>
@@ -10,7 +10,7 @@
   <li>
     <router-link :to="{name: 'auth'}">Authentication</router-link>
   </li>
-</ul>
+</ul> -->
 
 <router-view></router-view> 
 

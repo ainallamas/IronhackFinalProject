@@ -2,16 +2,17 @@
 
     
 
-    <div class="section">
-    <div class="container">
-        <h1 class="title">LOGIN</h1>
-        <form @submit.prevent="onSubmit">
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                <input v-model="email" class="input" type="email" placeholder="E-mail">
-                </div>
+<div class="section">
+<div class="container">
+    <h1 class="title">Already have an account?</h1>
+    <h2 class="subtitle">Please, log in</h2>
+    <form @submit.prevent="onSubmit">
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+            <input v-model="email" class="input" type="email" placeholder="E-mail">
             </div>
+        </div>
             <div class="field">
                 <label class="label">Password</label>
                 <div class="control">
@@ -21,12 +22,14 @@
             </div>
             <div class="field">
                 <div class="control">
-                <input class="button is-link is-fullwidth" type="submit" placeholder="Text input">
+                <button class="button is-link is-fullwidth" type="submit" placeholder="Text input">Submit</button>
                 </div>
             </div>
         </form>
 
+        <div class="button register-button">
         <router-link :to="{name: 'register'}">Register</router-link>
+        </div>
 
     </div>
     </div>

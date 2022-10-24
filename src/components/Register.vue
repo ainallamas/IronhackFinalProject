@@ -1,36 +1,43 @@
 <template>
 
-<h1>REGISTER</h1>
 
-    <div class="section">
-    <div class="container">
-        <form @submit.prevent="onSubmit">
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control">
-                <input v-model="email" class="input" type="email" placeholder="E-mail">
-                </div>
+<div class="section">
+<div class="container">
+
+    <h1 class="title">Please, sign up</h1>
+
+    <form @submit.prevent="onSubmit">
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+            <input v-model="email" class="input" type="email" placeholder="E-mail">
             </div>
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control">
-                    <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-                <input v-model="password" class="input" type="password" placeholder="Password">
-                </div>
+        </div>
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+                <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
+            <input v-model="password" class="input" type="password" placeholder="Password">
             </div>
-            <div class="field">
-                <label class="label">Password confirmation</label>
-                <div class="control">
-                    <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-                <input v-model="passwordConfirmation" class="input" type="password" placeholder="Password confirmation">
-                </div>
+        </div>
+        <div class="field">
+            <label class="label">Password confirmation</label>
+            <div class="control">
+                <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
+            <input v-model="passwordConfirmation" class="input" type="password" placeholder="Password confirmation">
             </div>
-            <div class="field">
-                <div class="control">
-                <input class="button is-link is-fullwidth" type="submit" placeholder="Text input">
-                </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <button class="button is-link is-fullwidth" type="submit" placeholder="Text input">Submit</button>
+            </div>
             </div>
         </form>
+
+    <div class="button register-button">
+    <router-link :to="{name: 'login'}">Already have an account? Login here</router-link>
+    </div>
+
     </div>
     </div>
     
@@ -48,7 +55,7 @@ const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env
 const router = useRouter();
 const authStore = useAuthStore();
 
-// Inputs from the users:
+// Info from the users:
 const email = ref('');
 const password = ref ('');
 const passwordConfirmation = ref ('');

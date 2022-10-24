@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   // Cuando hagamos build -> cual será la carpeta de destino. Tenemos que poner la carpeta a la que vamos a vincular el github pages, en este caso, 'docs'. 
-  base: process.env.NODE_ENV == 'production' ? '/IronhackFinalProject' : '/',
+  base: process.env.NODE_ENV == 'production' ? '/IronhackFinalProject/' : '/',
   build: {
     outDir: 'docs',
     rollupOptions: {
@@ -24,6 +24,6 @@ export default defineConfig({
       // base: '/'
   // }
   server: {
-    base: process.env.NODE_ENV == 'production' ? '/IronhackFinalProject' : '/',
+    base: process.env.NODE_ENV == 'production' ? '/IronhackFinalProject/' : '/',
   }
 })
