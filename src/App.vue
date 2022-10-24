@@ -27,6 +27,8 @@ import { ref } from 'vue';
 
 const router = useRouter();
 const authStore = useAuthStore();
+
+// Hem de cridar la funció del persist perquè s'obri i s'apliqui: 
 const { user } = storeToRefs(authStore);
 
 onMounted (async () => {
