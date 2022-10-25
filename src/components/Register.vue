@@ -13,33 +13,33 @@
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Email</label>
             <div class="control">
-            <input v-model="email" class="input" type="email" placeholder="E-mail">
+            <input v-model="email" class="input" type="email" placeholder="your@email.com">
             </div>
         </div>
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Password</label>
             <div class="control">
                 <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-            <input v-model="password" class="input" type="password" placeholder="Password">
+            <input v-model="password" class="input" type="password" placeholder="*******">
             </div>
         </div>
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Password confirmation</label>
             <div class="control">
                 <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-            <input v-model="passwordConfirmation" class="input" type="password" placeholder="Password confirmation">
+            <input v-model="passwordConfirmation" class="input" type="password" placeholder="*******">
             </div>
         </div>
         <div class="field">
             <div class="control">
-            <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">Submit</button>
+            <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">Start POST(PONE)ING</button>
             </div>
             </div>
         </form>
 
     <div class="login">
     <div class="field button is-link is-centered login-button">
-    <router-link :to="{name: 'login'}">Already have an account? Sign in here</router-link>
+    <router-link :to="{name: 'login'}">Already have an account? Sign in</router-link>
     </div>
     </div>
 

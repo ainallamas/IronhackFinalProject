@@ -39,4 +39,8 @@
   background-color: #F26052;
 }
 
+.navbar {
+  background-color: #F26052;
+}
+
 </style>

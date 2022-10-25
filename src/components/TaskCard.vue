@@ -16,11 +16,15 @@
     </div>
 
     <div class="task-buttons">
-    <button @click="editTask" class="button submit-button is-size-5 has-text-weight-bold">Edit</button>
+
+    <button v-if="!props.task.isCreated" @click="editTask" class="button submit-button is-size-5 has-text-weight-bold">Edit</button>
     
-    <button @click="completedTask" class="button submit-button is-size-5 has-text-weight-bold">Done</button>
+    <button v-if="!props.task.isCreated" @click="completedTask" class="button submit-button is-size-5 has-text-weight-bold">Done</button>
+
+    <button v-else @click="completedTask" class="button submit-button is-size-5 has-text-weight-bold">Unfinished</button>
     
     <button @click="delTask" class="button submit-button is-size-5 has-text-weight-bold">Delete</button>
+    
     </div>
 
 </div>
@@ -81,9 +85,10 @@ const delTask = (async () => {
     await taskStore.getTasks();
 });
 
+
 // Funció per marcar que la tasca està completa: 
 const completedTask = (async () => {
-    await taskStore.doneTask(props.task.id, props.task.isCreated)
+    await taskStore.doneTask(props.task.id, props.task.isCreated);
     await taskStore.getTasks();
 });
 
@@ -139,13 +144,13 @@ const acceptChanges = (async () => {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 5px;
     margin: 15px;
 }
 
 .done {
     background-color:#F2BDD6;
     border: solid 5px #F26052;
-    /* text-decoration: line-through; */
 }
 
 .submit-button {
@@ -171,6 +176,16 @@ const acceptChanges = (async () => {
 
 .fet {
     text-decoration: line-through;
+};
+
+
+@media (max-width: 1450px) {
+
+.task-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
 };
 
 </style>

@@ -13,19 +13,19 @@
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Email</label>
             <div class="control">
-            <input v-model="email" class="input" type="email" placeholder="E-mail">
+            <input v-model="email" class="input" type="email" placeholder="your@email.com">
             </div>
         </div>
             <div class="field">
                 <label class="label is-size-4 has-text-weight-bold">Password</label>
                 <div class="control">
                     <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-                <input v-model="password" class="input" type="password" placeholder="Password">
+                <input v-model="password" class="input" type="password" placeholder="*******">
                 </div>
             </div>
             <div class="field">
                 <div class="control">
-                <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">Submit</button>
+                <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">LOG IN</button>
                 </div>
             </div>
     </form>
@@ -44,6 +44,7 @@
 </template>
 
 <script setup>
+
 import { ref } from 'vue'
 import { useAuthStore } from '../store/auth'
 import { useRouter } from 'vue-router'

@@ -8,7 +8,7 @@
 
   <div class="navbar-menu">
    <div class="navbar-start">
-      <div class="navbar-item title has-text-weight-bold is-size-1">
+      <div class="navbar-item title is-size-1 has-text-weight-bold">
       POST(PONE) IT
       </div>
     </div>
