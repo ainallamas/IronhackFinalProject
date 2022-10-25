@@ -3,7 +3,7 @@
 <div class="container">
 
 <div class="welcome-message">
-    <h1 class="title">NEW TASK</h1>
+    <h1 class="title has-text-weight-bold is-size-1">WHAT'S NEXT?</h1>
 </div>
 
 <form @submit.prevent="onSubmit">
@@ -22,7 +22,7 @@
 
     <div class="field">
         <div class="control">
-        <button class="button is-link is-centered submit-button" type="submit">Submit</button>
+        <button class="button is-link is-centered submit-button is-size-5 has-text-weight-bold" type="submit">Submit</button>
         </div>
     </div>
 
@@ -63,15 +63,28 @@ const onSubmit = (async () => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
+.title {
+  color: #F2BDD6;
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 .container {
-    border: solid 5px #D2D904;
-    border-radius: 0.8rem;
-    background-color:  #F24194;
+    border: solid 5px #1C593D;
+    background-color:  #1C593D;
+}
+
+form {
+   margin: 0px 20px 0px 20px;
+}
+
+.control {
+    margin-bottom: 30px;
 }
 
 .welcome-message {
-    margin: 20px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,13 +96,14 @@ const onSubmit = (async () => {
 }
 
 .submit-button {
-    background-color: #278C8C;
-    color: #F24194;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color:#F2BE5C;
+    color: #F26052;
 }
 
 .submit-button:hover {
-    background-color: #D2D904;
-    color: #F24194;
-}
+    background-color:#F26052;
+    color:  #F2BE5C;
+};
 
 </style>

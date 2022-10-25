@@ -5,27 +5,27 @@
 
 <!-- El que hi ha després de :class només es compleix quan el boolean (isCreated) sigui true -->
 
-<div v-if="!taskEdition" class="task-card" :class="{ done : props.task.isCreated }">
+<div v-if="!taskEdition" class="task-card has-text-centered" :class="{ done : props.task.isCreated }">
 
     <div class="task-title">
-    <div class="title">{{props.task.title}}</div>
+    <div class="title tasca" :class="{ fet : props.task.isCreated }">{{props.task.title}}</div>
     </div>
 
     <div class="task-description">
-    <div class="subtitle">{{props.task.description}}</div>
+    <div class="subtitle tasca" :class="{ fet : props.task.isCreated }">{{props.task.description}}</div>
     </div>
 
     <div class="task-buttons">
-    <button @click="editTask" class="button submit-button">Edit</button>
+    <button @click="editTask" class="button submit-button is-size-5 has-text-weight-bold">Edit</button>
     
-    <button @click="completedTask" class="button submit-button">Done</button>
+    <button @click="completedTask" class="button submit-button is-size-5 has-text-weight-bold">Done</button>
     
-    <button @click="delTask" class="button submit-button">Delete</button>
+    <button @click="delTask" class="button submit-button is-size-5 has-text-weight-bold">Delete</button>
     </div>
 
 </div>
 
-<div v-else class="task-card" :class="{ done : props.task.isCreated }">
+<div v-else class="task-card tarea has-text-centered" :class="{ done : props.task.isCreated }">
 
     <div class="field">
         <div class="control">
@@ -41,18 +41,18 @@
 
     <div class="field">
         <div class="control">
-        <button @click="acceptChanges" class="button submit-button">
+        <button @click="acceptChanges" class="button submit-button is-size-5 has-text-weight-bold">
             <strong>Accept</strong>
         </button>
-        <button @click="cancelChanges" class="button submit-button">
+        <button @click="cancelChanges" class="button submit-button is-size-5 has-text-weight-bold">
            <strong>Cancel</strong>
         </button>
         </div>
     </div>
 
 </div>
-
 </div>
+
 </div>
 
 </template>
@@ -125,40 +125,52 @@ const acceptChanges = (async () => {
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 .task-card {
-    border: solid 5px #D92567;
-    border-radius: 0.8rem;
+    font-family: 'Josefin Sans', sans-serif;
+    border: solid 5px #F2BE5C;
     padding: 1rem;
     margin-top: 10px;
-    background-color: #D2D904;
+    background-color: #F2BE5C;
 }
 
 .task-buttons {
     display: flex;
-    justify-content: space-between;
-    margin: 20px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px;
 }
 
 .done {
-    background-color:#D92567;
-    border: solid 5px  #D2D904;
+    background-color:#F2BDD6;
+    border: solid 5px #F26052;
+    /* text-decoration: line-through; */
 }
 
 .submit-button {
-    background-color: #278C8C;
-    border: #278C8C;
-    color: #F24194;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #1C593D;
+    border: none;
+    color: #F26052;
 }
 
 .submit-button:hover {
-    background-color: #F24194;
-    color: #D6BD2A;
+    background-color:#F26052;
+    color: #F2BDD6;
 }
 
 .control {
     display: flex;
     justify-content: space-around;
 }
+
+.tasca {
+    color: #1C593D;
+}
+
+.fet {
+    text-decoration: line-through;
+};
 
 </style>

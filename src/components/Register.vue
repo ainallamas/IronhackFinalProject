@@ -5,26 +5,26 @@
 <div class="container">
 
 <div class="welcome-message">
-    <h1 class="title welcome">Please, sign up</h1>
+    <h1 class="title welcome is-size-2 has-text-weight-bold">Please, sign up</h1>
 </div>
 
 <div class="sign-up">
     <form @submit.prevent="onSubmit">
         <div class="field">
-            <label class="label">Email</label>
+            <label class="label is-size-4 has-text-weight-bold">Email</label>
             <div class="control">
             <input v-model="email" class="input" type="email" placeholder="E-mail">
             </div>
         </div>
         <div class="field">
-            <label class="label">Password</label>
+            <label class="label is-size-4 has-text-weight-bold">Password</label>
             <div class="control">
                 <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
             <input v-model="password" class="input" type="password" placeholder="Password">
             </div>
         </div>
         <div class="field">
-            <label class="label">Password confirmation</label>
+            <label class="label is-size-4 has-text-weight-bold">Password confirmation</label>
             <div class="control">
                 <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
             <input v-model="passwordConfirmation" class="input" type="password" placeholder="Password confirmation">
@@ -32,7 +32,7 @@
         </div>
         <div class="field">
             <div class="control">
-            <button class="button is-link is-centered submit-button" type="submit" placeholder="Text input">Submit</button>
+            <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">Submit</button>
             </div>
             </div>
         </form>
@@ -89,8 +89,12 @@ catch (error) {
     
 <style scoped>
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
 label {
-color: #D2D904;
+    color: #1C593D;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
 }
 
 .container {
@@ -99,50 +103,57 @@ color: #D2D904;
     align-items: center;
 }
 
+.control {
+    display: flex;
+    justify-content: center;
+}
+
 .welcome {
-    color: #278C8C;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#F2BE5C;
 }
 
 .welcome-message {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 20px;
+    text-align: center;
 }
 
 .sign-up {
-    margin: 20px;
-    border: solid 5px #D2D904;
-    border-radius: 0.8rem;
-    background-color:  #F24194;
+    margin: 40px;
+    background-color: #F2BDD6;
 }
 
 .field {
-    margin: 20px;
+    margin: 40px;
 }
 
 .login-button {
+    font-family: 'Josefin Sans', sans-serif;
     display: flex;
-    background-color: #D2D904;
+    background-color:  #1C593D;
 }
 
 .login-button:hover {
-    background-color: #278C8C;
+    background-color: #F2BE5C;
 }
 
 .submit-button {
-    background-color: #278C8C;
-    color: #F24194;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F2BE5C;
+    color: #1C593D;
 }
 
 .submit-button:hover {
-    background-color: #D2D904;
-    color: #F24194;
+    background-color: #1C593D;
+    color: #F2BE5C;
 }
 
 a {
-    color: #D92567;
+    color: #F2BE5C;
 }
 
+a:hover {
+    color: #1C593D;
+}
 
 </style>

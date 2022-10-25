@@ -2,11 +2,14 @@
 
 <div class="nav-top">
 <nav class="navbar" role="navigation" aria-label="main navigation">
+  <!-- <div class="navbar-brand">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyy_zGw32yNCVIqADtHgWGALoYrZrdRbRBmA&usqp=CAU" class="logo">
+  </div> -->
 
-  <div id="navbarBasicExample" class="navbar-menu">
+  <div class="navbar-menu">
    <div class="navbar-start">
-      <div class="navbar-item title ">
-      TASK DASHBOARD
+      <div class="navbar-item title has-text-weight-bold is-size-1">
+      POST(PONE) IT
       </div>
     </div>
   </div>
@@ -15,8 +18,8 @@
   <div class="navbar-end">
    <div class="navbar-item">
       <div class="buttons">
-        <button @click="logOut" class="button is-link is-centered logout-button">
-         <strong>Log out</strong>
+        <button @click="logOut" class="button is-link is-centered logout-button is-size-4 has-text-weight-bold">
+              Log out
         </button>
       </div>
     </div>
@@ -50,30 +53,35 @@ try {
 
 <style scoped>
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
+
 .title {
-  color: #F24194;
+  color:#F26052;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .navbar-menu {
-  background-color:#D9AD2B;
+  background-color:#F2BDD6;
 }
 
 .navbar-item {
-  background-color: #D9AD2B;
+  background-color: #F2BDD6;
 }
 
 .logout-button {
-  background-color: #D2D904;
-  color: #F24194;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #F26052;
+  color: #1C593D;
 }
 
 .logout-button:hover {
-  background-color: #F24194;
-  color: #278C8C;
+  background-color: #1C593D;
+  color: #F2BE5C;
 }
 
-
-
-
+.buttons {
+  display: flex;
+  justify-content: center;
+}
 
 </style>

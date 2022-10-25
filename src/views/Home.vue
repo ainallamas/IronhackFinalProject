@@ -6,10 +6,11 @@
 <Navbar />
 
 <NewTask />
-<div v-for="task in taskStore.task">
+<div class="columns is-multiline">
+<div v-for="task in taskStore.task" class="column is-12-mobile is-6-tablet is-4-desktop">
     <TaskCard :task="task"/>
 </div>
-
+</div>
 
 </div>
 </div>
@@ -39,4 +40,13 @@ taskStore.getTasks();
 </script>
 
 <style scoped>
+
+.column {
+    padding: 0rem; 
+}
+
+.section {
+    background-color: #F2BDD6;
+}
+
 </style>
