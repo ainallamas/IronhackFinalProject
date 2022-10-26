@@ -13,8 +13,8 @@
     </section>
 
     <footer class="modal-card-foot">
-      <button @click="delTask" class="button is-success">Delete</button>
-      <button @click="delModal" class="button">Cancel</button>
+      <button @click="delTask" class="button delete-button">Delete</button>
+      <button @click="delModal" class="button cancel-button">Cancel</button>
     </footer>
   </div>
 </div>
@@ -26,8 +26,6 @@
 
 import {defineEmits} from 'vue';
 
-// Definimos los eventos: 
-// En este caso, el evento será accept or cancel: emitiremos al padre para que aparezca el modal.
 const emits = defineEmits (['accept', 'cancel']);
 
 const delTask = () => {
@@ -43,5 +41,37 @@ const delModal = () => {
 
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
+
+.modal-card-head {
+  background-color: #f26052;
+  border: none;
+}
+
+.modal-card-body {
+  background-color: #F2BDD6;
+  color: #1C593D;
+}
+
+.modal-card-foot {
+  background-color: #F2BDD6;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-button {
+  font-family: 'Josefin Sans', sans-serif;
+  background-color:  #F2BE5C;
+  color: #F26052;
+  border: none; 
+}
+
+.cancel-button {
+  font-family: 'Josefin Sans', sans-serif;
+  border: none;
+  color: #F2BDD6;
+  background-color: #1C593D;
+}
 
 </style>

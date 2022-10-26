@@ -7,10 +7,12 @@
 
 <NewTask />
 
-<div class="mb-5">
-    <button class="button" @click="filtered = 'all'">All</button>
-    <button class="button" @click="filtered = 'done'">Done</button>
-    <button class="button" @click="filtered = 'unfinished'">Unfinished</button>
+<div class="mb-5 filter-buttons">
+
+    <button class="button submit-button is-size-5 has-text-weight-bold" @click="filtered = 'all'">All</button>
+    <button class="button submit-button is-size-5 has-text-weight-bold" @click="filtered = 'done'">Done</button>
+    <button class="button submit-button is-size-5 has-text-weight-bold" @click="filtered = 'unfinished'">Unfinished</button>
+
 </div>
 
 
@@ -20,7 +22,7 @@
 </div>
 </div>
 
-
+<FooterSignature />
 
 </div>
 </div>
@@ -39,6 +41,7 @@ import NewTask from '../components/NewTask.vue';
 import TaskCard from '../components/TaskCard.vue';
 import Navbar from '../components/Navbar.vue';
 import { propsToAttrMap } from '@vue/shared';
+import FooterSignature from '../components/FooterSignature.vue';
 
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
@@ -65,6 +68,7 @@ taskStore.getTasks();
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 .column {
     padding: 0rem; 
@@ -72,6 +76,24 @@ taskStore.getTasks();
 
 .section {
     background-color: #F2BDD6;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.submit-button {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color:#F26052;
+    color: #F2BDD6;
+    border: none;
+}
+
+.submit-button:hover {
+    background-color: #1C593D;
+    color: #F26052;
 }
 
 </style>

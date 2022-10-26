@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="publicar-tarea button is-size-4 has-text-weight-bold"
+            class="publicar-tarea button is-size-3 has-text-weight-bold"
           >
             POST NEW TASKS
           </button>
@@ -103,7 +103,7 @@ const onSubmit = async () => {
   background-color: #1c593d !important;
   color: #f2bdd6 !important;
   border: none !important;
-  border-radius: 10rem !important;
+  /* border-radius: 10rem !important; */
 }
 
 .title {
@@ -116,21 +116,11 @@ const onSubmit = async () => {
   background-color: #1c593d;
 }
 
-/* .container {
-    border: solid 5px #1C593D;
-    background-color:  #1C593D;
-} */
 
 form {
   margin: 0px 20px 0px 20px;
   text-align: center;
 }
-
-/* .control {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-} */
 
 .welcome-message {
   margin: 40px;
@@ -155,10 +145,4 @@ form {
   color: #f2be5c;
 }
 
-/* @media (max-width: 600px) {
-.save-button {
-    display: flex;
-    flex-direction: column;
-}
-} */
 </style>
