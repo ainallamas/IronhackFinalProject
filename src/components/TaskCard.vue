@@ -23,9 +23,12 @@
 
     <button v-else @click="completedTask" class="button submit-button is-size-5 has-text-weight-bold">Unfinished</button>
     
-    <button @click="delTask" class="button submit-button is-size-5 has-text-weight-bold">Delete</button>
+    <button @click="isOpen = true" class="button submit-button is-size-5 has-text-weight-bold">Delete</button>
+
+    <DeleteConfirmation v-if="isOpen" @accept="delTask" @cancel="isOpen = false"/>
     
     </div>
+
 
 </div>
 
@@ -68,6 +71,7 @@ import { createClient } from '@supabase/supabase-js'
 import { defineProps } from 'vue';
 import { useTaskStore } from '../store/task';
 import { updateTask } from '../api';
+import DeleteConfirmation from './DeleteConfirmation.vue';
 
 
 
@@ -75,14 +79,18 @@ const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env
 const props = defineProps ({task: Object});
 const taskStore = useTaskStore(); 
 
+
 // Editar tasques:
 const taskEdition = ref(false);
 
+//Funció pel modal d'eliminar tasques: 
+const isOpen = ref(false);
 
-//Funció per eliminar tasques:
+
 const delTask = (async () => {
     await taskStore.deleteTask(props.task.id);
     await taskStore.getTasks();
+    isOpen.value = !isOpen.value;
 });
 
 
@@ -123,7 +131,6 @@ const acceptChanges = (async () => {
     );
     await taskStore.getTasks();
 });
-
 
 
 </script>
@@ -178,14 +185,13 @@ const acceptChanges = (async () => {
     text-decoration: line-through;
 };
 
-
+/* 
 @media (max-width: 1450px) {
 
 .task-buttons {
     display: flex;
     flex-direction: column;
 }
-
-};
+}; */
 
 </style>

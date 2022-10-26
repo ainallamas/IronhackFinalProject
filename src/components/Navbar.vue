@@ -2,10 +2,6 @@
 
 <div class="nav-top">
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <!-- <div class="navbar-brand">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyy_zGw32yNCVIqADtHgWGALoYrZrdRbRBmA&usqp=CAU" class="logo">
-  </div> -->
-
   <div class="navbar-menu">
    <div class="navbar-start">
       <div class="navbar-item title is-size-1 has-text-weight-bold">
@@ -32,6 +28,7 @@
 </template>
 
 <script setup>
+
 import { useAuthStore } from '../store/auth'
 import { useRouter } from 'vue-router'
 
@@ -58,6 +55,10 @@ try {
 .title {
   color:#F26052;
   font-family: 'Josefin Sans', sans-serif;
+}
+
+.navbar {
+  background-color: #F2BDD6;
 }
 
 .navbar-menu {
