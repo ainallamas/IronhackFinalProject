@@ -99,11 +99,11 @@ const onSubmit = async () => {
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
 .publish {
-  font-family: "Josefin Sans", sans-serif;
-  background-color: #1c593d;
-  color: #f2bdd6;
-  border: none;
-  border-radius: 10rem;
+  font-family: "Josefin Sans", sans-serif !important;
+  background-color: #1c593d !important;
+  color: #f2bdd6 !important;
+  border: none !important;
+  border-radius: 10rem !important;
 }
 
 .title {
