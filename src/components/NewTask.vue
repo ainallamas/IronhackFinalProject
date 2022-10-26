@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="button publicar-tarea is-size-4 has-text-weight-bold"
+            class="publicar-tarea button is-size-4 has-text-weight-bold"
           >
             POST NEW TASKS
           </button>
