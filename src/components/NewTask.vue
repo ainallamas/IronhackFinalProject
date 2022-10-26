@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="button publish is-size-4 has-text-weight-bold"
+            class="button publicar-tarea is-size-4 has-text-weight-bold"
           >
             POST NEW TASKS
           </button>
@@ -98,7 +98,7 @@ const onSubmit = async () => {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
-.publish {
+.publicar-tarea {
   font-family: "Josefin Sans", sans-serif !important;
   background-color: #1c593d !important;
   color: #f2bdd6 !important;
