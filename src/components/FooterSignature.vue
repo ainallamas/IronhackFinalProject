@@ -3,7 +3,7 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p class="is-size-6 has-text-weight-bold author ">
-            POST(PONE) IT by Aina Llamas Morillas 
+            POST(PONE) IT by Aina Llamas 
         </p>
         <p class="date">
             October 2022

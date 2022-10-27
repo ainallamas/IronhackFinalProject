@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="publicar-tarea button is-size-3 has-text-weight-bold"
+            class="publicar-tarea is-size-3 has-text-weight-bold"
           >
             POST NEW TASKS
           </button>
@@ -99,12 +99,30 @@ const onSubmit = async () => {
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
 .publicar-tarea {
-  font-family: "Josefin Sans", sans-serif !important;
-  background-color: #1c593d !important;
-  color: #f2bdd6 !important;
-  border: none !important;
-  /* border-radius: 10rem !important; */
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #1c593d;
+  color: #f2bdd6;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em; 
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap; 
+  user-select: none; 
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display:inline-flex;
+  height: 2.5em; 
+  line-height: 1.5;
+  position: relative; 
+  vertical-align: top;
 }
+
 
 .title {
   color: #f2bdd6;
