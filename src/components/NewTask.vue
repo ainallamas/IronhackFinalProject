@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="publicar-tarea save-button button is-centered button is-size-3 has-text-weight-bold" type="submit"
+            class="button is-centered publicar-tarea is-size-3 has-text-weight-bold" type="submit"
           >
             POST NEW TASKS
           </button>
@@ -35,10 +35,10 @@
           </div>
 
           <div class="field">
-            <div class="save-button control columns">
+            <div class="control columns">
               <div class="column">
                 <button
-                  class="button is-link is-centered submit-button is-size-5 has-text-weight-bold is-fullwidth"
+                  class="save-button button is-link is-centered submit-button is-size-5 has-text-weight-bold is-fullwidth"
                   type="submit"
                 >
                   Save changes
@@ -138,11 +138,14 @@ form {
   font-family: "Josefin Sans", sans-serif;
   background-color: #f2be5c;
   color: #f26052;
+  border: none; 
 }
 
 .submit-button:hover {
   background-color: #f26052;
   color: #f2be5c;
 }
+
+
 
 </style>
