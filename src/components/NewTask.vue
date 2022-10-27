@@ -5,7 +5,7 @@
         <form>
           <button
             @click="publish"
-            class="save-button button is-link is-centered publicar-tarea button is-size-3 has-text-weight-bold" type="submit"
+            class="publicar-tarea save-button button is-centered button is-size-3 has-text-weight-bold" type="submit"
           >
             POST NEW TASKS
           </button>
