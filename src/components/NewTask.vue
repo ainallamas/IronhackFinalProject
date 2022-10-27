@@ -98,14 +98,6 @@ const onSubmit = async () => {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
-.publicar-tarea {
-  font-family: "Josefin Sans", sans-serif !important;
-  background-color: #1c593d !important;
-  color: #f2bdd6 !important;
-  border: none !important;
-  /* border-radius: 10rem !important; */
-}
-
 .title {
   color: #f2bdd6;
   font-family: "Josefin Sans", sans-serif;

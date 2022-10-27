@@ -8,6 +8,11 @@
 <div v-if="!taskEdition" class="task-card has-text-centered" :class="{ done : props.task.isCreated }">
 
     <div class="task-title">
+    <div class="title date is-size-6 has-text-right">
+    {{props.task.created_at}}</div>
+    </div>
+
+    <div class="task-title">
     <div class="title tasca" :class="{ fet : props.task.isCreated }">{{props.task.title}}</div>
     </div>
 
@@ -78,7 +83,6 @@ import DeleteConfirmation from './DeleteConfirmation.vue';
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 const props = defineProps ({task: Object});
 const taskStore = useTaskStore(); 
-
 
 // Editar tasques:
 const taskEdition = ref(false);
@@ -179,19 +183,12 @@ const acceptChanges = (async () => {
 
 .tasca {
     color: #1C593D;
+    margin-top: 15px;
 }
 
 .fet {
     text-decoration: line-through;
 };
 
-/* 
-@media (max-width: 1450px) {
-
-.task-buttons {
-    display: flex;
-    flex-direction: column;
-}
-}; */
 
 </style>
