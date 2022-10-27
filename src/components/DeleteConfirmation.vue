@@ -23,7 +23,6 @@
 
 
 <script setup>
-
 import {defineEmits} from 'vue';
 
 const emits = defineEmits (['accept', 'cancel']);
@@ -35,7 +34,6 @@ const delTask = () => {
 const delModal = () => {
     emits('cancel')
 };
-
 
 </script>
 

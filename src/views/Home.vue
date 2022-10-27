@@ -56,12 +56,9 @@ const tasks = computed(() => {
     return taskStore.task.filter(task => task.isCreated == false)
 })
 
-
 const filtered = ref('all');
 
-
-
-
+// Perquè aparegui el dashboard de les tasques:  
 taskStore.getTasks();
 
 

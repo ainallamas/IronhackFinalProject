@@ -12,22 +12,28 @@
     <form @submit.prevent="onSubmit">
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Email</label>
-            <div class="control">
-            <input v-model="email" class="input is-warning" type="email" placeholder="your@email.com">
+            <div class="control has-icons-left has-icons-right">
+            <input v-model="email" class="input is-warning" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
             </div>
         </div>
-            <div class="field">
-                <label class="label is-size-4 has-text-weight-bold">Password</label>
-                <div class="control">
-                    <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-                <input v-model="password" class="input is-warning" type="password" placeholder="*******">
-                </div>
+        <div class="field">
+            <label class="label is-size-4 has-text-weight-bold">Password</label>
+            <div class="control has-icons-left has-icons-right">
+                <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
+            <input v-model="password" class="input is-warning" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
             </div>
-            <div class="field">
-                <div class="control">
-                <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">LOG IN</button>
-                </div>
+        </div>
+        <div class="field">
+            <div class="control">
+            <button class="button is-link is-centered submit-button is-size-4 has-text-weight-bold" type="submit">LOG IN</button>
             </div>
+        </div>
     </form>
 
     <div class="registro">
@@ -44,13 +50,11 @@
 </template>
 
 <script setup>
-
 import { ref } from 'vue'
 import { useAuthStore } from '../store/auth'
 import { useRouter } from 'vue-router'
 import { createClient } from '@supabase/supabase-js'
 import { storeToRefs } from 'pinia'
-
  
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 const router = useRouter();
@@ -63,7 +67,7 @@ const password = ref ('');
 // Missatge alerta dels errors: 
 const alerta = ref('');
 
-
+// Funció del login: 
 const onSubmit = (async () => {
 try {
     await authStore.login(email.value, password.value);
@@ -83,7 +87,6 @@ catch (error) {
 </script>
     
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 label {
@@ -150,6 +153,5 @@ a {
 a:hover {
     color: #1C593D;
 }
-
 
 </style>

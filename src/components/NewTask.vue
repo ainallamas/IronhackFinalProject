@@ -101,24 +101,15 @@ const onSubmit = async () => {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
-
-/* .title-style {
-  color: #f2bdd6;
-  font-family: "Josefin Sans", sans-serif;
-} */
-
 .title {
   color: #f2bdd6;
   font-family: "Josefin Sans", sans-serif;
 }
 
-
-
 .newtask {
   border: solid 5px #1c593d;
   background-color: #1c593d;
 }
-
 
 form {
   margin: 0px 20px 0px 20px;
@@ -155,9 +146,5 @@ form {
   background-color: #f26052;
   color: #f2be5c;
 }
-
-
-
-
 
 </style>

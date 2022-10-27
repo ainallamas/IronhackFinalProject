@@ -1,7 +1,6 @@
 <template>
 <div class="section">
     <div class="container">
-
 <NavbarLogin />    
 
 <router-view></router-view>

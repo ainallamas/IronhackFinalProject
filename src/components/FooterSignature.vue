@@ -20,7 +20,6 @@
 
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 footer {

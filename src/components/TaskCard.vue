@@ -4,7 +4,6 @@
 <div class="container">
 
 <!-- El que hi ha després de :class només es compleix quan el boolean (isCreated) sigui true -->
-
 <div v-if="!taskEdition" class="task-card has-text-centered" :class="{ done : props.task.isCreated }">
 
     <div class="task-title">
@@ -33,8 +32,6 @@
     <DeleteConfirmation v-if="isOpen" @accept="delTask" @cancel="isOpen = false"/>
     
     </div>
-
-
 </div>
 
 <div v-else class="task-card tarea has-text-centered" :class="{ done : props.task.isCreated }">
@@ -79,7 +76,6 @@ import { updateTask } from '../api';
 import DeleteConfirmation from './DeleteConfirmation.vue';
 
 
-
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 const props = defineProps ({task: Object});
 const taskStore = useTaskStore(); 
@@ -90,20 +86,17 @@ const taskEdition = ref(false);
 //Funció pel modal d'eliminar tasques: 
 const isOpen = ref(false);
 
-
 const delTask = (async () => {
     await taskStore.deleteTask(props.task.id);
     await taskStore.getTasks();
     isOpen.value = !isOpen.value;
 });
 
-
 // Funció per marcar que la tasca està completa: 
 const completedTask = (async () => {
     await taskStore.doneTask(props.task.id, props.task.isCreated);
     await taskStore.getTasks();
 });
-
 
 // Funció per editar les tasques:
 const taskUpdated = ref ({
@@ -135,7 +128,6 @@ const acceptChanges = (async () => {
     );
     await taskStore.getTasks();
 });
-
 
 </script>
 
@@ -189,6 +181,5 @@ const acceptChanges = (async () => {
 .fet {
     text-decoration: line-through;
 };
-
 
 </style>

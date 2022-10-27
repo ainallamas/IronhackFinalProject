@@ -1,6 +1,5 @@
 <template>
 
-
 <nav class="navbar" role="navigation" aria-label="main navigation">
  <div class="navbar-menu">
    <div class="navbar-start">
@@ -13,7 +12,6 @@
     </div>
   </div>
 
-
   <div class="navbar-end">
    <div class="navbar-item">
       <div class="buttons">
@@ -23,14 +21,11 @@
       </div>
     </div>
   </div>
-
 </nav>
-
 
 </template>
 
 <script setup>
-
 import { useAuthStore } from '../store/auth'
 import { useRouter } from 'vue-router'
 
@@ -47,11 +42,9 @@ try {
     }
 });
 
-
 </script>
 
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 .title {

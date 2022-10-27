@@ -12,22 +12,30 @@
     <form @submit.prevent="onSubmit">
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Email</label>
-            <div class="control">
-            <input v-model="email" class="input is-warning" type="email" placeholder="your@email.com">
+            <div class="control has-icons-left has-icons-right">
+            <input v-model="email" class="input is-warning" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+            </span>
             </div>
         </div>
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Password</label>
-            <div class="control">
+            <div class="control has-icons-left has-icons-right">
                 <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-            <input v-model="password" class="input  is-warning" type="password" placeholder="*******">
+            <input v-model="password" class="input  is-warning" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
             </div>
         </div>
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Password confirmation</label>
-            <div class="control">
-                <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-            <input v-model="passwordConfirmation" class="input is-warning" type="password" placeholder="*******">
+            <div class="control has-icons-left has-icons-right">
+            <input v-model="passwordConfirmation" class="input is-warning" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+            </span>
             </div>
         </div>
         <div class="field">
@@ -88,7 +96,6 @@ catch (error) {
 </script>
     
 <style scoped>
-
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap');
 
 label {

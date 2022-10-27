@@ -1,17 +1,5 @@
 <template>
 
-<!-- <Navbar /> -->
-
-<!-- <ul>
-  <li>
-    <router-link :to="{name: 'home'}">Home</router-link>
-  </li>
-  <br>
-  <li>
-    <router-link :to="{name: 'auth'}">Authentication</router-link>
-  </li>
-</ul> -->
-
 <router-view></router-view> 
 
 </template>
