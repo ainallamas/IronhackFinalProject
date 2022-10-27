@@ -41,13 +41,13 @@
 
     <div class="field">
         <div class="control">
-        <input v-model="taskUpdated.title" class="input is-normal" placeholder="Post the new title">
+        <input v-model="taskUpdated.title" class="input is-normal is-warning" placeholder="Post the new title">
         </div> 
     </div>
 
     <div class="field">
         <div class="control">
-        <textarea v-model="taskUpdated.description" class="textarea" placeholder="Write a new post description"></textarea>
+        <textarea v-model="taskUpdated.description" class="textarea is-warning" placeholder="Write a new post description"></textarea>
         </div>
     </div>  
 

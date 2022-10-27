@@ -47,7 +47,7 @@ import FooterSignature from '../components/FooterSignature.vue';
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 const taskStore = useTaskStore();
 
-// Computed -> recalcular las variables 
+// Computed -> recalcular les variables 
 const tasks = computed(() => {
     if (filtered.value == "all") return taskStore.task;
     if (filtered.value == "done") {
@@ -82,6 +82,7 @@ taskStore.getTasks();
     display: flex;
     justify-content: center;
     gap: 20px;
+    border: none;
 }
 
 .submit-button {
@@ -94,6 +95,7 @@ taskStore.getTasks();
 .submit-button:hover {
     background-color: #1C593D;
     color: #F26052;
+    border: none;
 }
 
 </style>

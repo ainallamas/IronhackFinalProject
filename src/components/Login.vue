@@ -13,14 +13,14 @@
         <div class="field">
             <label class="label is-size-4 has-text-weight-bold">Email</label>
             <div class="control">
-            <input v-model="email" class="input" type="email" placeholder="your@email.com">
+            <input v-model="email" class="input is-warning" type="email" placeholder="your@email.com">
             </div>
         </div>
             <div class="field">
                 <label class="label is-size-4 has-text-weight-bold">Password</label>
                 <div class="control">
                     <!-- Con el v-model almacenamos/vinculamos las variables al input que queramos -->
-                <input v-model="password" class="input" type="password" placeholder="*******">
+                <input v-model="password" class="input is-warning" type="password" placeholder="*******">
                 </div>
             </div>
             <div class="field">

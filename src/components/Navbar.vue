@@ -1,9 +1,12 @@
 <template>
 
-<div class="nav-top">
+
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-menu">
+ <div class="navbar-menu">
    <div class="navbar-start">
+      <!-- <router-link :to="{ name: 'home'}">
+        <img src="/post-it.png" width="100">
+      </router-link> -->
       <div class="navbar-item title is-size-1 has-text-weight-bold">
       POST(PONE) IT
       </div>
@@ -22,7 +25,6 @@
   </div>
 
 </nav>
-</div>
 
 
 </template>

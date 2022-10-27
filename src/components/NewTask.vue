@@ -20,7 +20,7 @@
         <form @submit.prevent="onSubmit">
           <div class="field">
             <div class="control">
-              <input v-model="title" class="input" placeholder="Task title" />
+              <input v-model="title" class="input is-warning" placeholder="Task title" />
             </div>
           </div>
 
@@ -28,7 +28,7 @@
             <div class="control">
               <textarea
                 v-model="description"
-                class="textarea"
+                class="textarea is-warning"
                 placeholder="Write a task description"
               ></textarea>
             </div>
@@ -86,13 +86,16 @@ const publish = () => {
 };
 
 const onSubmit = async () => {
-  await taskStore.newTask(title.value, description.value);
-  console.log(authStore.user);
-  console.log(title.value, description.value);
-  title.value = "";
-  description.value = "";
-  taskStore.getTasks();
+  if (title.value !== '' && description.value !== '') {
+    await taskStore.newTask(title.value, description.value);
+    console.log(authStore.user);
+    console.log(title.value, description.value);
+    title.value = "";
+    description.value = "";
+    taskStore.getTasks();
+  }
 };
+
 </script>
 
 <style scoped>
