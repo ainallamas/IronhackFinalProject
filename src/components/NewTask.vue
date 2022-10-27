@@ -1,7 +1,7 @@
 <template>
   <div class="section">
     <div class="container">
-      <div v-if="publishing">
+      <div v-if="publishing" class="welcome-message">
         <form>
           <button
             @click="publish"
