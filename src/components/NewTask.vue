@@ -14,7 +14,7 @@
 
       <div v-else class="newtask">
         <div class="welcome-message">
-          <h1 class="title has-text-weight-bold is-size-1">WHAT'S NEXT?</h1>
+          <h1 class="title title-style has-text-weight-bold is-size-1">WHAT'S NEXT?</h1>
         </div>
 
         <form @submit.prevent="onSubmit">
@@ -98,10 +98,18 @@ const onSubmit = async () => {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&display=swap");
 
-.title {
+
+.title-style {
   color: #f2bdd6;
   font-family: "Josefin Sans", sans-serif;
 }
+
+/* .title {
+  color: #f2bdd6;
+  font-family: "Josefin Sans", sans-serif;
+} */
+
+
 
 .newtask {
   border: solid 5px #1c593d;
