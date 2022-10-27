@@ -14,7 +14,7 @@
 
       <div v-else class="newtask">
         <div class="welcome-message">
-          <h1 class="titol has-text-weight-bold is-size-1">WHAT'S NEXT?</h1>
+          <h1 class="titol">WHAT'S NEXT?</h1>
         </div>
 
         <form @submit.prevent="onSubmit">
@@ -101,8 +101,9 @@ const onSubmit = async () => {
 .titol {
   color: #f2bdd6;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 3rem!important;
   line-height: 1.125;
+  font-weight: 700!important;
 }
 
 .newtask {
